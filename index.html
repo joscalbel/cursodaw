@@ -1,42 +1,173 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecte Servidor / Client - Documentació</title>
+    <title>Documentación del Proyecto | Curso DAW</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
-        header { background: #24292e; color: white; padding: 20px; border-radius: 8px; }
-        nav a { color: #0366d6; margin-right: 15px; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        .card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; margin-top: 20px; }
-        .badge { background: #0366d6; color: white; padding: 3px 8px; border-radius: 12px; font-size: 0.8em; }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+
+        nav {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .badge {
+            background: #eff6ff;
+            color: var(--primary-dark);
+            border: 1px solid #bfdbfe;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #e2e8f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 15px;
+            border: 2px dashed #cbd5e1;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🚀 Documentació del Projecte</h1>
-        <p>Desenvolupament Entorn Servidor / Client</p>
-    </header>
 
-    <nav style="margin-top: 20px;">
-        <a href="index.html">Inici</a> | 
-        <a href="tutorial.html">Mini Tutorial d'Ús</a>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>🚀 Proyecto Desarrollo Web (DAW)</h1>
+            <p>Documentación técnica y guía de entorno cliente/servidor</p>
+        </header>
 
-    <section class="card">
-        <h2>🛠️ Tecnologies Utilitzades</h2>
-        <ul>
-            <li><span class="badge">Backend</span> Node.js / Express / PHP</li>
-            <li><span class="badge">Frontend</span> HTML5, CSS3, JavaScript ES6</li>
-            <li><span class="badge">Base de Dades</span> MySQL / MongoDB</li>
-        </ul>
-    </section>
+        <nav>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="tutorial.html">📖 Tutorial de Uso</a>
+        </nav>
 
-    <section class="card">
-        <h2>📸 Captures de l'Aplicació</h2>
-        <p>A continuació es mostren algunes imatges del projecte en funcionament:</p>
-        <img src="https://via.placeholder.com/600x300?text=Captura+de+l%27Aplicacio" alt="Captura de l'app" style="max-width: 100%; border-radius: 5px;">
-    </section>
+        <section class="card">
+            <h2>🛠️ Tecnologías y Módulos</h2>
+            <p>Despliegue y configuración en entorno de desarrollo:</p>
+            <div class="badges">
+                <span class="badge">Desarrollo Web Entorno Cliente</span>
+                <span class="badge">Desarrollo Web Entorno Servidor</span>
+                <span class="badge">Git & GitHub Pages</span>
+                <span class="badge">HTML5 / CSS3 / JS</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>📸 Capturas del Proyecto</h2>
+            <p>Vista previa del funcionamiento de la aplicación:</p>
+            <div class="img-placeholder">
+                [ Insertar aquí captura de pantalla del proyecto ]
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 - Proyecto DAW | Publicado con GitHub Pages</p>
+        </footer>
+    </div>
+
 </body>
 </html>
