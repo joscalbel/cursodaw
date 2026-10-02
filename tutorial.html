@@ -1,23 +1,260 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mini Tutorial d'Ús</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Instalación y Uso | Curso DAW</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --code-bg: #0f172a;
+            --code-text: #38bdf8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.05rem;
+        }
+
+        nav {
+            background: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1e293b;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Formato para bloques de código terminal */
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 16px;
+            border-radius: 8px;
+            font-family: "Fira Code", Consolas, Monaco, "Courier New", monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 10px 0 15px 0;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        code {
+            font-family: inherit;
+        }
+
+        /* Tablas para API / Endpoints */
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: 600;
+        }
+
+        .method {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .method.get { background: #dbeafe; color: #1e40af; }
+        .method.post { background: #dcfce7; color: #166534; }
+        .method.put { background: #fef9c3; color: #854d0e; }
+        .method.delete { background: #fee2e2; color: #991b1b; }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>📖 Mini Tutorial de Configuració i Ús</h1>
-    <p><a href="index.html">← Tornar a l'inici</a></p>
 
-    <h2>1. Execució en Local</h2>
-    <p>Per iniciar l'aplicació en entorn de desenvolupament, executa:</p>
-    <pre><code>npm install
-npm start</code></pre>
+    <div class="container">
+        <header>
+            <h1>📖 Guía de Instalación y Despliegue</h1>
+            <p>Paso a paso para clonar, configurar y ejecutar el proyecto en tu entorno local</p>
+        </header>
 
-    <h2>2. Enllaços d'Interès</h2>
-    <p>Pots consultar l'API REST utilitzant eines com Postman o Thunder Client.</p>
+        <nav>
+            <a href="index.html">🏠 Inicio</a>
+            <a href="tutorial.html">📖 Tutorial de Uso</a>
+        </nav>
+
+        <!-- Sección 1 -->
+        <section class="card">
+            <h2>1. Requisitos Previos</h2>
+            <p>Antes de comenzar, asegúrate de tener instaladas las siguientes herramientas en tu ordenador:</p>
+            <ul>
+                <li><strong>Git:</strong> Control de versiones (<a href="https://git-scm.com/" target="_blank">descargar</a>).</li>
+                <li><strong>Node.js / npm:</strong> Entorno de ejecución para JavaScript (<a href="https://nodejs.org/" target="_blank">descargar</a>).</li>
+                <li><strong>Visual Studio Code:</strong> Editor de código recomendado.</li>
+            </ul>
+        </section>
+
+        <!-- Sección 2 -->
+        <section class="card">
+            <h2>2. Clonar el Repositorio e Instalación</h2>
+            <p>Abre la terminal de tu sistema operativo o Git Bash y ejecuta los siguientes comandos:</p>
+            
+            <p><strong>1. Clonar el proyecto:</strong></p>
+            <pre><code>git clone https://github.com/joscalbel/cursodaw.git</code></pre>
+
+            <p><strong>2. Entrar al directorio del proyecto:</strong></p>
+            <pre><code>cd cursodaw</code></pre>
+
+            <p><strong>3. Instalar las dependencias necesarias:</strong></p>
+            <pre><code>npm install</code></pre>
+        </section>
+
+        <!-- Sección 3 -->
+        <section class="card">
+            <h2>3. Ejecución en Local</h2>
+            <p>Para arrancar el servidor de desarrollo y probar la aplicación en tu navegador:</p>
+            <pre><code>npm start</code></pre>
+            <p>La aplicación estará disponible por defecto en la dirección: <code>http://localhost:3000</code></p>
+        </section>
+
+        <!-- Sección 4 -->
+        <section class="card">
+            <h2>4. Estructura de Endpoints de la API</h2>
+            <p>Si estás interactuando con las rutas del backend (Servidor), puedes utilizar la siguiente referencia:</p>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Ruta</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="method get">GET</span></td>
+                            <td><code>/api/status</code></td>
+                            <td>Comprueba el estado del servidor.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method get">GET</span></td>
+                            <td><code>/api/items</code></td>
+                            <td>Obtiene el listado completo de elementos.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method post">POST</span></td>
+                            <td><code>/api/items</code></td>
+                            <td>Crea un nuevo elemento en la base de datos.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method delete">DELETE</span></td>
+                            <td><code>/api/items/:id</code></td>
+                            <td>Elimina un elemento específico por su ID.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 - Proyecto DAW | Documentación Técnica de Uso</p>
+        </footer>
+    </div>
+
 </body>
 </html>
