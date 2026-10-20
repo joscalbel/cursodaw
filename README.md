@@ -37,5 +37,4 @@
 
 ## 📬 Contacto
 
-- **LinkedIn:** [Tu nombre en LinkedIn](https://linkedin.com/in/tu-perfil)
 - **Correo electrónico:** [josecalatayud5@gmail.com](mailto:josecalatayud5@gmail.com)
